@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NES.CSS WALK BULBASAUR</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+  <style>
+      * {
+        transition: ease 1s;
+        margin-top: 10px;
+      }
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+  </style>
+</head>
+<body>
+    <main>
+      <p class="nes-balloon from-left nes-pointer">
+        quantos commits faltam para bater a meta mensal?
+      </p>
+      <div class="nes-field">
+        <label for="name_field">Meta mensal</label>
+        <input type="number" value="30" id="meta-atual" class="nes-input">
+      </div>
+      <div class="nes-field">
+        <label for="name_field">Commits realizados</label>
+        <input type="number" value="1" id="realizado" class="nes-input">
+      </div>
+      <button type="button" class="nes-btn is-success" onclick="calcularMETA()">Success</button>
+      <div class="nes-container is-rounded" style="display: none" id="resultado">
+      </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
