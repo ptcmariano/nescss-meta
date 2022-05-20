@@ -34,6 +34,14 @@
       <button type="button" class="nes-btn is-success" onclick="calcularMETA()">Success</button>
       <div class="nes-container is-rounded" style="display: none" id="resultado">
       </div>
+      <hr>
+      
+      <div class="nes-field">
+        <label for="name_field">Pesquise um usuario do github para saber os commits dele</label>
+        <input type="text" placeholder="github user" id="usergithub" class="nes-input">
+      </div>
+      <button type="button" class="nes-btn is-success" onclick="pesquisaUsuarioGithub()">Pesquisa</button>
+      <div class="nes-container is-rounded" style="display: none" id="githubresultado"></div>
     </main>
     <script src="./index.js"></script>
 </body>
