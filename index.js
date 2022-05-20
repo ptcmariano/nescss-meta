@@ -34,11 +34,21 @@ function pesquisaUsuarioGithub() {
                     users = JSON.parse(httpRequest.response).items
                     countUsers = JSON.parse(httpRequest.response).total_count
                     githubresultado.style = `display: block`
+                    let links_avatar = ''
+                    for (const user of users) {
+                        links_avatar += `
+                        <div class="nes-container with-title is-centered">
+                        <p class="title">${user.login}</p>
+                        <a target="_blank" href="${user.html_url}">${user.html_url}
+                        <img src="${user.avatar_url}" style="width: 120px;"/>
+                        </a>
+                        </div>
+                        `
+                    }
                     githubresultado.innerHTML = `
                         <p>Encontrado ${countUsers} usuarios</p>
-                        <p>Link para ver githubuser 
-                        <a target="_blank" href="${users[countUsers-1].html_url}">${users[countUsers-1].html_url}</a>
-                        <img src="${users[countUsers-1].avatar_url}" style="width: 120px;"/>
+                        <p>Links para ver githubuser 
+                        ${links_avatar}
                         </p>
                     `
                 } catch (error) {
@@ -47,8 +57,6 @@ function pesquisaUsuarioGithub() {
                         <p>Erro ao trazer githubuser</p>
                     `
                 }
-                console.log(countUsers);
-                console.log(users);
             } else {
                 alert('There was a problem with the request.');
             }
